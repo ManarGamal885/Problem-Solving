@@ -1,22 +1,18 @@
-//https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/A
-#include <bits/stdc++.h>
-using namespace std;
-void init ()
-{
-    cin.tie (0);
-    cin.sync_with_stdio (0);
-}
-void solve()
-{
-    string s,t;
-    cin>>s>>t;
-    cout<<s.length()<<" "<<t.length()<<endl;
-    cout<<s<<" "<<t<<endl;
-}
+//https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/B
+import java.util.Scanner;
+import java.util.*;
+public class GetLine {
+ 
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner input = new Scanner(System.in);
+        
+        String s= input.nextLine();
+        if(s.length()>=1&&s.length()<=Math.pow(10, 6)){
+        String result = s.split("\\\\", 2)[0];
+         System.out.println(result);
 
-
-int main ()
-{
-    init();
-    solve();
+    }
+    }
+    
 }
