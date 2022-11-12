@@ -1,33 +1,36 @@
+//https://codeforces.com/contest/1076/problem/B
 #include <bits/stdc++.h>
 using namespace std;
-set<long long> findDivisors (long long n)
+#define ll long long
+ll findPrimeFactor(ll n)
 {
-    set<long long>res;
-    for(int i=1; i <= n/i; i++)
+    for (ll i = 2; i <= n / i; i++)
     {
-        if(n%i ==0)
+        while (n % i == 0)
         {
-            res.insert(i);
-            res.insert(n/i);
+            return i;
         }
-
     }
-     return res;
+    if (n > 1)
+    {
+        return n;
+    }
 }
-int main ()
+void solve()
 {
-        long long n,k;
-        cin>>n>>k;
-        set<long long>v;
-        v=findDivisors(n);
-        if(k>v.size()){
-             cout<<-1<<endl;
-         }
-        else{
-             long long x = *std::next(v.begin(), k-1);
-             cout<<x<<endl;
-        }
-       
-    
-    
+    ll n;
+    cin >> n;
+    if (n % 2 == 0)
+    {
+        cout << n / 2 << endl;
+    }
+    else
+    {
+        n = n-findPrimeFactor(n);
+        cout<<n/2 +1<<endl;
+    }
+}
+int main()
+{
+    solve();
 }
